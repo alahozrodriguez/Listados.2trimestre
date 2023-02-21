@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado</title>
+    <script>
+        var personajes = [     
+        {
+          "imagen":"image/perro.png",
+          "nombre":"Perro",
+          "velocidad":7,
+          "resistencia":1,
+        },
+        {
+          
+          "image": "image/gato.png",
+          "nombre":"Gato",
+          "velocidad":8,
+          "resistencia":3,
+        },
+      
+        ];
+    </script>
+</head>
+<body>
+    <img id="image" alt=""><br>
+    Nombre: <span id="nombre"></span><br>
+    Velocidad: <span id="velocidad"></span><br>
+    Resistencia: <span id="resistencia"></span><br>
+    <input type="button" value="Anterior" onclick="ant()">
+    <input type="button" value="Siguiente" onclick="sig()">
+    <script>
+        var a=0;
+        show();
+        function sig() {
+        a=a+1;
+        if (a>personajes.length-1) {
+            a=0;
+        }
+        show();
+      }
+        function ant() {
+        a=a-1;
+        if (a<0) {
+            a=personajes.length-1;
+        }
+        show();
+      }
+        function show() {
+        document.getElementById("nombre").innerHTML = personajes[a].nombre;
+        document.getElementById("velocidad").innerHTML = personajes[a].velocidad;
+        document.getElementById("resistencia").innerHTML = personajes[a].resistencia;
+        var img=document.getElementById("image");
+        img.setAttribute("src",personajes[a].imagen);
+        }
+    </script>
+</body>
+</html>
+
+
