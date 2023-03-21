@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, reduce, filter ejercicio</title>
+</head>
+<body>
+    <script>
+        const personas = [
+            {"name":"John", "age":25},
+            {"name":"Jane", "age":30},
+            {"name":"Bob", "age":35},
+        ]
+        p1 = {"name":"Marta", "age":16};
+        p2 = {"name":"Anabel", "age":17};
+        personas.push(p1);
+        personas.push(p2);
+        //personas.forEach(x => console.log("Nombre: "+x.name));
+        listado_nombres=personas.map(y=>y.name);
+        listado_mayores_30=personas.filter(z=>z.age>=16);
+        suma_edades=personas.reduce((a,b)=>a+b.age,0);
+    </script>
+</body>
+</html>
